@@ -49,7 +49,7 @@ flask run
 }
 ```
 
-#### cadastro:
+#### login:
 
 - Tipo - POST
 - Nome - /singup 
