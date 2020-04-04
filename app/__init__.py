@@ -8,10 +8,14 @@ app = Flask(__name__)
 app.config.from_object(config.Config)
 db = SQLAlchemy(app)
 
-from app.models import user,company
+from app.models import user,company,client,message,message_client
 
+decodeToken = user.decode_auth_token
 user = user.User
 company = company.Company
+clients = client.Client
+messages = message
+message_clients = message_client 
 
 migrate = Migrate(app, db)
 
