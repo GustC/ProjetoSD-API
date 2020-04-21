@@ -60,3 +60,24 @@ flask run
   "password" : "12132",
 }
 ```
+
+
+#### listagem de clientes da empresa:
+
+- Tipo - GET
+- Nome - /client
+- querryParams : 
+> search = campo de busca 
+
+
+#### cadastro de clientes de um empresa:
+
+- Tipo - POST
+- Nome - /client 
+- form-data
+```javascript
+{
+  "email" : "teste@xxx.com",
+  "name" : "nomeDoCliente",
+}
+```
