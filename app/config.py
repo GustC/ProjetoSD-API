@@ -8,3 +8,5 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = "mysql://root:@localhost/projetosd"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.getenv('SECRET_KEY', 'my_precious')
+    KAFKA_SERVER = "localhost:9092"
+    TOPIC_NAME = "message-to-send"

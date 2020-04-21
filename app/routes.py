@@ -1,6 +1,6 @@
 from app import app,db
 from flask import request,abort,Response,jsonify
-from app.controllers import clientController,authController
+from app.controllers import clientController,authController,messageController
 
 @app.route('/')
 @app.route('/index')
@@ -23,6 +23,9 @@ def listClients():
 def saveClient():
    return clientController.saveClient()
 
+@app.route('/email',methods=['POST'])
+def sendEmails():
+   return messageController.sendEmails()
 @app.errorhandler(400)
 def error400(error):
    print(error)
