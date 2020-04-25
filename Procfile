@@ -1,1 +1,3 @@
-FLASK_APP=run.py flask run
+FLASK_APP=ProjetoSD.py flask run
+
+web: python ProjetoSD.py
