@@ -16,7 +16,6 @@ Flask = "==1.1.1"
 PyJWT = "==1.7.1"
 pip = "*"
 flask-script = "*"
-mysql-python = "*"
 
 [requires]
 python_version = "3.8"
