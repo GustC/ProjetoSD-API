@@ -1,3 +1,4 @@
+import os
 from flask import Flask, escape, request
 from app import config
 from flask_sqlalchemy import SQLAlchemy
