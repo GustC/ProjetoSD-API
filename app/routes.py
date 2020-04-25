@@ -5,7 +5,7 @@ from app.controllers import clientController,authController,messageController
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, World!"
+    return "Bem vindo!"
 
 @app.route('/singin', methods=['POST'])
 def singin():
