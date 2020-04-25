@@ -7,7 +7,8 @@ from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config.from_object(config.Config)
-print(config.Config.SQLALCHEMY_DATABASE_URI)
+print(os.environ['DATABASE_URL'])
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
 
 from app.models import user,company,client,message,message_client
