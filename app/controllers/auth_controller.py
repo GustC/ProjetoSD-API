@@ -17,6 +17,13 @@ def singin():
            abort(400, description="Coloque o cnpj da sua empresa!")
         else:
             from app import user,company     
+
+            findCompany = company.query.filter_by(cnpj = cnpjData,).first()
+            if(findCompany is not None):
+               abort(400, description="O CNPJ informado já esta cadastrado!")
+            findUser = user.query.filter_by(email=email).first()
+            if(findUser is not None):
+               abort(400, description="O email informado já esta cadastrado!")
                    
             companyNew = company(cnpj = cnpjData,ramo = ramo)
             print("company Criado")
