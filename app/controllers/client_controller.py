@@ -16,7 +16,8 @@ def getClients():
 
     us = user.query.get(userId)
 
-    print(us)
+    if(us is None):
+        abort(403,description="Acesso negado")
 
     search = request.args.get("search")
     nameSearch = ""

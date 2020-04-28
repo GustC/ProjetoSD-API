@@ -11,7 +11,10 @@ def sendEmails():
     userId = decodeToken(xToken)
 
     us = user.query.get(userId)
-    
+    if(us is None):
+        abort(403,description="Acesso negado")
+    if(request.form.get("users[]") is None):
+        abort(400, description="Selecione os destinatários")
     users = request.form.getlist("users[]")
     messageData = request.form.get("message")
     if(users is None or len(users[0])==0):
@@ -23,7 +26,7 @@ def sendEmails():
     db.session.add(newMessage)
     db.session.commit()
     data = []
-    for userData in users:        
+    for userData in users:   
         newMessegeClient = message_clients.Message_Client(message_id=newMessage.id,client_id=json.loads(userData)["id"])
         db.session.add(newMessegeClient)
         db.session.commit()
