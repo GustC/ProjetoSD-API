@@ -1,5 +1,8 @@
 # ProjetoSD-API
 
+Api do projeto de sistemas distribuidos utilizando python e mysql.
+
+
 ## Pre-requisitos
 MySQL, MySQLServer, Python 3
 
